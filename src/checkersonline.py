@@ -56,7 +56,7 @@ class CheckersClient:
         else:
             return self.socket.recv(4096).decode()
 
-    def unmarshal(self, data: dir):
+    def unmarshal(self, data):
         result = [{}]
         for i in data.strip().split("\n"):
             position = i.find("{")
