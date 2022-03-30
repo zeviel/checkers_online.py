@@ -148,7 +148,7 @@ class CheckersClient:
         cube: list = [False, True],
         fast: list = [False, True],
         bet_min: int = 100,
-        bet_max: int = 1000,
+        bet_max: int = 1000000,
         full: bool = False
     ):
         self.send_server(
