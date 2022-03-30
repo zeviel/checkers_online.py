@@ -169,7 +169,7 @@ class CheckersClient:
 
     def update_nickname(self, nickname: str = None):
         self.send_server(
-            {"command": "update_name", "value": nickname}, receive=True)
+            {"command": "update_name", "value": nickname})
 
     def send_smile_in_game(self, smile_id: int = 7):
         self.send_server({"command": "smile", "id": smile_id})
