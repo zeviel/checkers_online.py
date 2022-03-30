@@ -2,7 +2,6 @@ import socket
 from sys import stderr
 from hashlib import md5
 from loguru import logger
-from threading import Thread
 from base64 import b64encode
 from datetime import datetime
 from json import dumps, loads
