@@ -1,4 +1,5 @@
 import socket
+from time import sleep
 from sys import stderr
 from hashlib import md5
 from loguru import logger
@@ -14,7 +15,7 @@ class CheckersClient:
         platform: str = "android",
         debug: bool = False,
         language: str = "ru",
-        tag: str = "client"
+        tag: str = "checlient"
     ):
         self.platform = platform
         self.tag = tag.upper()
@@ -38,6 +39,7 @@ class CheckersClient:
         self.logger.info(f"Connected to the server!")
 
     def send_server(self, data: dir):
+        sleep(0.1)
         self.socket.send(
             (data.pop("command") +
              dumps(
@@ -116,8 +118,8 @@ class CheckersClient:
             data = {"id": game_id, "command": "join"}
         self.send_server(data)
 
-    def leave_from_game(self, game_id: int):
-        self.send_server({"id": game_id, "command": "leave"})
+    def leave_from_game(self):
+        self.send_server({"command": "leave"})
 
     def ready(self):
         self.send_server({"command": "ready"})
