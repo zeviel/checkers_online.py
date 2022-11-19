@@ -4,5 +4,6 @@
 ## Example
 ```py3
 import checkers_online
-checlient = checkers_online.CheckersClient(token="")
+checkers_online = checkers_online.CheckersOnline()
+checkers_online.login_with_access_token(access_token="")
 ```
