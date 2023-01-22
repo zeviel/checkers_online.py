@@ -30,7 +30,7 @@ class CheckersOnline:
 		)
 		self.sign(self.get_session_key())
 
-	def create_connection(self) -> str:
+	def create_connection(self) -> None:
 		self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		self.socket.connect(("65.21.247.72", 12771))
 		self.logger.info(f"Connected to the server!")
