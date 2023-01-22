@@ -45,7 +45,7 @@ class CheckersOnline:
 
 	def receive_server_response(
 			self,
-			unmarshal: bool = False) -> [str, dict]:
+			unmarshal: bool = False) -> str | dict:
 		if unmarshal:
 			return self.unmarshal(self.socket.recv(4096).decode())
 		else:
