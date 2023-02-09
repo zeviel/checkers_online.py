@@ -81,7 +81,7 @@ class CheckersOnline:
 		data = self.receive_server_response()
 		return self.unmarshal(data)[0]["key"]
 
-	def sign(self, session_key: int) -> str:
+	def sign(self, session_key: int) -> None:
 		hash = b64encode(md5(
 			(
 				f"{session_key}falgcanfxehkufvcukydbvkudvgkuydsdasfdfvwvcyksed").encode()
